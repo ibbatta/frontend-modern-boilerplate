@@ -1,0 +1,13 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: $font-family-default;
+}

@@ -1,0 +1,5 @@
+TRUMPS
+
+The trumps layer is the dirty layer.
+Even after structuring your styling according to the ITCSS principles it can happen that you have to use !important to for example override some third-party styling.
+Do that in this layer as this is the most specific, local and explicit layer.

@@ -1,0 +1,4 @@
+COMPONENTS
+
+The component layer is the place where most of styling magic happens as you will be styling your ui elements here.
+In component based frameworks like Angular, Vue or React this is the layer where you import your styling for each component.

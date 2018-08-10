@@ -1,0 +1,4 @@
+ELEMENTS
+
+In this layer we put styles for bare, unclassed HTML elements.
+You could for example think about underlines for anchors on hover or font-sizes for the different headings.

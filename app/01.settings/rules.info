@@ -1,0 +1,4 @@
+SETTINGS
+
+Contains the global variables and settings used across your project, e.g. colour defaults, grid settings, typography, etc
+If you’re using a preprocessor like scss this is your starting point. In this layer you define your variables.

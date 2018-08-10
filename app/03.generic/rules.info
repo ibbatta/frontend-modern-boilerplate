@@ -1,0 +1,4 @@
+GENERICS
+
+In this layer we house all the very high-level rules, nothing project design specific.
+This layer is often the same across all your projects as it contains things like Normalize.css, css resets and for example box-sizing rules.

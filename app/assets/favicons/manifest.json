@@ -2,6 +2,7 @@
     "short_name": "Boilerplate",
     "name": "Webpack modern boilerplate",
     "lang": "en-US",
+    "start_url": "/",
     "background_color": "#3367D6",
     "theme_color": "#3367D6",
     "display": "standalone",

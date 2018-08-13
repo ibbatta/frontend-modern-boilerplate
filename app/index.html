@@ -35,7 +35,17 @@
 <body>
     <div id="app" class="app-container"></div>
     <noscript>Your browser does not support JavaScript!</noscript>
-    <script type="text/javascript" src="pwa/hook.js" defer></script>
+    <script type="text/javascript">
+    window.addEventListener('load', function() {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                console.log('Service worker successfully registered on scope', registration.scope);
+            }).catch(function(error) {
+                console.log('Service worker failed to register', error);
+            });
+        }
+    }, false)
+    </script>
 </body>
 
 </html>

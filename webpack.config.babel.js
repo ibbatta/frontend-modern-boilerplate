@@ -5,9 +5,11 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
+const distOutput = path.resolve(__dirname, 'dist');
 
 const webpackConfig = {
     target: 'web',
@@ -17,7 +19,7 @@ const webpackConfig = {
         main: [path.resolve(__dirname, 'app/index.jsx' || 'app/index.js')]
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: distOutput,
         filename: isProd ? '[name]-[chunkhash].js' : '[name].bundle.js',
         chunkFilename: isProd ? '[name]-[chunkhash].js' : '[name].bundle.js'
     },
@@ -127,7 +129,7 @@ const webpackConfig = {
     },
     plugins: [
         new WebpackMd5Hash(),
-        new CleanWebpackPlugin('dist', {}),
+        new CleanWebpackPlugin(distOutput, {}),
         new MiniCssExtractPlugin({
             filename: isProd ? '[name]-[contenthash].css' : '[name].bundle.css'
         }),
@@ -147,7 +149,12 @@ const webpackConfig = {
             }
         }),
         new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')])
-    ]
+    ],
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+    }
 };
 
 if (!isProd) {
@@ -159,7 +166,15 @@ if (isProd) {
         new CopyWebpackPlugin([{
             from: 'assets/**',
             context: 'app'
-        }])
+        }]),
+        new SWPrecacheWebpackPlugin({
+            cacheId: 'test-boilerplate',
+            filename: 'service-worker.js',
+            dontCacheBustUrlsMatching: /\.\w{8}\./,
+            globDirectory: distOutput,
+            staticFileGlobs: ['**/*.{html,js,css}'],
+            swDest: path.join(distOutput, 'sw.js'),
+        })
     )
 }
 

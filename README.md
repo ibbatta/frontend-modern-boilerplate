@@ -132,7 +132,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [x] Airbnb eslinter
 - [x] React support
 - [x] ITCSS / OOCSS architecture guide
-- [ ] Prepare PWA environment
+- [ ] PWA environment
 - [ ] Node + Express server
 
 ---

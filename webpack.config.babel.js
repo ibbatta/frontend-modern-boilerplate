@@ -6,7 +6,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WorkboxPlugin from 'workbox-webpack-plugin';
-import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
+// import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -68,7 +68,7 @@ const webpackConfig = {
         loader: 'file-loader'
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        test: /\.(jpe?g|png|gif|svg|ico|tiff)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -155,9 +155,6 @@ const webpackConfig = {
       }
     }),
     new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')])
-    // new WorkboxPlugin.GenerateSW({
-    //   swDest: 'sw.js'
-    // })
   ],
   node: {
     fs: 'empty',
@@ -178,12 +175,30 @@ if (isProd) {
         context: 'app'
       }
     ]),
-    new SWPrecacheWebpackPlugin({
+    new WorkboxPlugin.GenerateSW({
       cacheId: 'boilerplate-app',
-      filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
-      minify: true,
-      stripPrefix: 'dist/'
+      globPatterns: ['**/*.{html,js,css}'],
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|tiff|ico|json)$/,
+          handler: 'cacheFirst',
+          options: { cacheName: 'static-assets' }
+        },
+        {
+          urlPattern: new RegExp('^https://fonts.googleapis.com/'),
+          handler: 'networkFirst',
+          options: { cacheName: 'google-font' }
+        },
+        {
+          urlPattern: new RegExp('^https://images.dog.ceo/'),
+          handler: 'networkFirst',
+          options: { cacheName: 'api-dog-images' }
+        }
+      ],
+      swDest: 'service-worker.js'
     })
   );
 }

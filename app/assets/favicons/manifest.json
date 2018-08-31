@@ -3,8 +3,8 @@
     "name": "Webpack modern boilerplate",
     "lang": "en-US",
     "start_url": "/",
-    "background_color": "#3367D6",
-    "theme_color": "#3367D6",
+    "background_color": "#333",
+    "theme_color": "#333",
     "display": "standalone",
     "icons": [{
             "src": "./icon-72x72.png",

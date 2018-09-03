@@ -11,3 +11,9 @@ body {
     box-sizing: border-box;
     font-family: $font-family-default;
 }
+
+img {
+    width: 100%;
+    max-width: 160px;
+    max-height: 160px;
+}

@@ -6,7 +6,7 @@ import axios from 'axios';
 if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register('/service-worker.js')
+      .register('./service-worker.js')
       .catch(registrationError => {
         console.error('SW registration failed: ', registrationError); // eslint-disable-line
       });
@@ -35,7 +35,7 @@ class Index extends Component {
     return (
       <section className="wrapper">
         {this.state.dogList.map((dogImage, index) => (
-          <img src={dogImage} alt="cane random" key={index} />
+          <img src={dogImage} alt="random dog" key={index} />
         ))}
       </section>
     );

@@ -177,16 +177,14 @@ if (isProd) {
     ]),
     new WorkboxPlugin.GenerateSW({
       cacheId: 'boilerplate-app',
-
       swDest: 'service-worker.js',
-      globDirectory: 'dist',
-      globPatterns: ['**/*.{html,js,css}'],
+      globPatterns: ['**/*.{html,js,css,jpg,jpeg,svg,png,ico,woff,woff2,ttf}'],
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       clientsClaim: true,
       skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|tiff|ico|json)$/,
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|tiff|ico|json|woff|woff2|ttf)$/,
           handler: 'cacheFirst',
           options: { cacheName: 'static-assets' }
         },
@@ -196,9 +194,9 @@ if (isProd) {
           options: { cacheName: 'google-font' }
         },
         {
-          urlPattern: new RegExp('^https://dog.ceo/api/'),
+          urlPattern: new RegExp('/'),
           handler: 'staleWhileRevalidate',
-          options: { cacheName: 'dog-api' }
+          options: { cacheName: 'general' }
         }
       ]
     })

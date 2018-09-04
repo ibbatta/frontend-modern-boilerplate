@@ -137,6 +137,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [x] ITCSS / OOCSS architecture guide
 - [x] Simple PWA environment
 - [ ] Node + Express server
+- [ ] Define a custom styleguide
 
 ---
 

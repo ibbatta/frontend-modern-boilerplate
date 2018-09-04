@@ -1,0 +1,59 @@
+{
+    "short_name": "Boilerplate",
+    "name": "Webpack modern boilerplate",
+    "lang": "en-US",
+    "start_url": "/",
+    "background_color": "#333",
+    "theme_color": "#333",
+    "display": "standalone",
+    "icons": [{
+            "src": "./icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image\/png",
+            "density": "0.75"
+        },
+        {
+            "src": "./icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image\/png",
+            "density": "1.0"
+        },
+        {
+            "src": "./icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image\/png",
+            "density": "1.5"
+        },
+        {
+            "src": "./icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image\/png",
+            "density": "2.0"
+        },
+        {
+            "src": "./icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image\/png",
+            "density": "3.0"
+        },
+        {
+            "src": "./icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image\/png",
+            "density": "4.0"
+        },
+        {
+            "src": "./icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image\/png",
+            "density": "5.0"
+        },
+        {
+            "src": "./icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image\/png",
+            "density": "6.0"
+        }
+    ],
+    "splash_pages": null
+}

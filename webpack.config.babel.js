@@ -4,9 +4,13 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import WorkboxPlugin from 'workbox-webpack-plugin';
+// import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
 import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
+const distOutput = path.resolve(__dirname, 'dist');
 
 const webpackConfig = {
   target: 'web',
@@ -16,7 +20,7 @@ const webpackConfig = {
     main: [path.resolve(__dirname, 'app/index.jsx' || 'app/index.js')]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: distOutput,
     filename: isProd ? '[name]-[chunkhash].js' : '[name].bundle.js',
     chunkFilename: isProd ? '[name]-[chunkhash].js' : '[name].bundle.js'
   },
@@ -59,7 +63,12 @@ const webpackConfig = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        exclude: /node_modules/,
+        loader: 'file-loader'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico|tiff)$/,
         exclude: /node_modules/,
         use: [
           {
@@ -79,7 +88,7 @@ const webpackConfig = {
   devServer: {
     port: process.env.PORT || 9000,
     host: process.env.HOST || 'localhost',
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'app'),
     compress: true,
     hot: true,
     inline: true,
@@ -126,7 +135,7 @@ const webpackConfig = {
   },
   plugins: [
     new WebpackMd5Hash(),
-    new CleanWebpackPlugin('dist', {}),
+    new CleanWebpackPlugin(distOutput, {}),
     new MiniCssExtractPlugin({
       filename: isProd ? '[name]-[contenthash].css' : '[name].bundle.css'
     }),
@@ -146,11 +155,52 @@ const webpackConfig = {
       }
     }),
     new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')])
-  ]
+  ],
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
+  }
 };
 
 if (!isProd) {
   webpackConfig.plugins.push(new HotModuleReplacementPlugin());
+}
+
+if (isProd) {
+  webpackConfig.plugins.push(
+    new CopyWebpackPlugin([
+      {
+        from: 'assets/**',
+        context: 'app'
+      }
+    ]),
+    new WorkboxPlugin.GenerateSW({
+      cacheId: 'boilerplate-app',
+      swDest: 'service-worker.js',
+      globPatterns: ['**/*.{html,js,css,jpg,jpeg,svg,png,ico,woff,woff2,ttf}'],
+      dontCacheBustUrlsMatching: /\.\w{8}\./,
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif|tiff|ico|json|woff|woff2|ttf)$/,
+          handler: 'cacheFirst',
+          options: { cacheName: 'static-assets' }
+        },
+        {
+          urlPattern: new RegExp('^https://fonts.googleapis.com/'),
+          handler: 'networkFirst',
+          options: { cacheName: 'google-font' }
+        },
+        {
+          urlPattern: new RegExp('/'),
+          handler: 'staleWhileRevalidate',
+          options: { cacheName: 'general' }
+        }
+      ]
+    })
+  );
 }
 
 module.exports = webpackConfig;

@@ -12,7 +12,9 @@
             "jsx": true
         }
     },
-    "globals": {},
+    "globals": {
+        "workbox": true
+    },
     "plugins": ["react"],
     "extends": [
         "eslint:recommended",

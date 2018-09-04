@@ -8,23 +8,26 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 
 ## **What this boilerplate contains**
 
-<img src="./repo_readme_assets/_logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/_logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/_logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/_logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/_logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/_logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 #### **Features**
 
 - [x] Webpack 4
+- [x] Es6 ready
 - [x] Sass compiler
 - [x] Html, Js, Css minifier
 - [x] Develpment / Production environment ready
 - [x] Style linter
-- [x] Airbnb eslinter for javascript, react ready
+- [x] Airbnb linter for javascript, react ready
 - [x] Style and script hot reloading in development mode
 - [x] Caching system for production environment
+- [x] Pwa integrated system by Google Workbox
 
 ---
 
@@ -132,8 +135,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - [x] Airbnb eslinter
 - [x] React support
 - [x] ITCSS / OOCSS architecture guide
-- [ ] Prepare PWA environment
+- [x] Simple PWA environment
 - [ ] Node + Express server
+- [ ] Define a custom styleguide
 
 ---
 

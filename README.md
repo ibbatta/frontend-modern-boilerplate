@@ -69,6 +69,8 @@ yarn
 
 ##### run the project to develop
 
+Run the project locally using webpack-dev-server on port 9000 (as default)
+
 ```bash
 npm start:dev
 # or
@@ -82,6 +84,10 @@ npm start
 #or
 yarn start
 ```
+
+You can change the default port value setting `PORT` in the node env
+<br>
+ie. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
 
 ##### run the analyzer for webpack
 

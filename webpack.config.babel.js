@@ -6,11 +6,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WorkboxPlugin from 'workbox-webpack-plugin';
-import {
-  HotModuleReplacementPlugin,
-  WatchIgnorePlugin,
-  AutomaticPrefetchPlugin
-} from 'webpack';
+import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
 const distOutput = path.resolve(__dirname, 'dist');
@@ -86,16 +82,7 @@ const webpackConfig = {
   },
   resolve: {
     modules: ['./node_modules', './app'],
-    extensions: [
-      '.html',
-      '.jade',
-      '.js',
-      '.jsx',
-      '.json',
-      '.scss',
-      '.css',
-      '.vue'
-    ]
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css']
   },
   devServer: {
     port: process.env.PORT || 9000,
@@ -104,7 +91,7 @@ const webpackConfig = {
     compress: true,
     hot: true,
     inline: true,
-    open: true,
+    open: false,
     progress: true,
     overlay: !isProd,
     watchOptions: {
@@ -173,8 +160,7 @@ const webpackConfig = {
 if (!isProd) {
   webpackConfig.plugins.push(
     new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')]),
-    new HotModuleReplacementPlugin(),
-    new AutomaticPrefetchPlugin()
+    new HotModuleReplacementPlugin()
   );
 }
 

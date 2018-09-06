@@ -15,6 +15,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 <img src="./repo_readme_assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 #### **Features**
 
@@ -22,6 +23,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 - [x] Webpack 4
 - [x] Babel (ES6 and JSX support)
 - [x] Sass compiler
+- [x] Handlebar compiler
 - [x] Html, Js, Css minifier
 - [x] Develpment / Production environment ready
 - [x] Style linter
@@ -139,7 +141,6 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [ ] Html preprocessor
 - [ ] Add routing (React router)
 - [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server

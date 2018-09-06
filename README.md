@@ -1,6 +1,6 @@
-# **WEBPACK MODERN BOILERPLATE**
+# **REACT + WEBPACK MODERN BOILERPLATE**
 
-> This repository contains a simple but complete boilerplate, with sass compiler and hot-reloading, to easily and fastly start developing projects from scratch with Webpack 4 and React 16.4.2
+> This repository contains a simple but complete boilerplate, with sass compiler and hot-reloading, to easily and fastly start developing projects from scratch with React 16 and Webpack 4
 
 Developed following the best practice for React and Style (with [OOCSS](http://oocss.org/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) and [BEM](http://getbem.com/) methodologies)
 
@@ -20,15 +20,15 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 
 - [x] React 16.4.2
 - [x] Webpack 4
-- [x] Es6 ready
+- [x] Babel
 - [x] Sass compiler
 - [x] Html, Js, Css minifier
 - [x] Develpment / Production environment ready
 - [x] Style linter
-- [x] Airbnb linter for javascript, react ready
+- [x] Airbnb javascript linter
 - [x] Style and script hot reloading in development mode
 - [x] Caching system for production environment
-- [x] Pwa integrated system by Google Workbox
+- [x] Pwa integrated system (Google Workbox)
 
 ---
 

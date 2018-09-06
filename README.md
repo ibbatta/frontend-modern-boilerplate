@@ -20,7 +20,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 
 - [x] React 16.4.2
 - [x] Webpack 4
-- [x] Babel
+- [x] Babel (ES6 and JSX support)
 - [x] Sass compiler
 - [x] Html, Js, Css minifier
 - [x] Develpment / Production environment ready
@@ -133,7 +133,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [ ] Jade template for html
+- [ ] Html preprocessor
 - [ ] Add routing (React router)
 - [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server

@@ -6,8 +6,11 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WorkboxPlugin from 'workbox-webpack-plugin';
-// import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin';
-import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
+import {
+  HotModuleReplacementPlugin,
+  WatchIgnorePlugin,
+  AutomaticPrefetchPlugin
+} from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
 const distOutput = path.resolve(__dirname, 'dist');
@@ -32,7 +35,7 @@ const webpackConfig = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true }
+            options: { minimize: isProd }
           }
         ]
       },
@@ -53,7 +56,7 @@ const webpackConfig = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass)$/,
         exclude: /node_modules/,
         use: [
           isProd ? MiniCssExtractPlugin.loader : 'style-loader',
@@ -83,7 +86,16 @@ const webpackConfig = {
   },
   resolve: {
     modules: ['./node_modules', './app'],
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css', '.vue']
+    extensions: [
+      '.html',
+      '.jade',
+      '.js',
+      '.jsx',
+      '.json',
+      '.scss',
+      '.css',
+      '.vue'
+    ]
   },
   devServer: {
     port: process.env.PORT || 9000,
@@ -102,8 +114,7 @@ const webpackConfig = {
     }
   },
   performance: {
-    hints: isProd ? 'error' : 'warning',
-    maxAssetSize: 300000
+    hints: isProd ? 'error' : 'warning'
   },
   optimization: {
     minimize: isProd,
@@ -113,12 +124,8 @@ const webpackConfig = {
     namedModules: !isProd,
     splitChunks: {
       chunks: 'all',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
       maxAsyncRequests: 5,
       maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
       name: true,
       cacheGroups: {
         vendors: {
@@ -140,10 +147,11 @@ const webpackConfig = {
       filename: isProd ? '[name]-[contenthash].css' : '[name].bundle.css'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'app/index.html'),
+      template: path.join(__dirname, 'app/index.html'),
       filename: 'index.html',
-      cache: isProd,
       inject: true,
+      minify: isProd,
+      cache: isProd,
       hash: isProd
     }),
     new UglifyJsPlugin({
@@ -153,8 +161,7 @@ const webpackConfig = {
           warnings: !isProd
         }
       }
-    }),
-    new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')])
+    })
   ],
   node: {
     fs: 'empty',
@@ -164,7 +171,11 @@ const webpackConfig = {
 };
 
 if (!isProd) {
-  webpackConfig.plugins.push(new HotModuleReplacementPlugin());
+  webpackConfig.plugins.push(
+    new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')]),
+    new HotModuleReplacementPlugin(),
+    new AutomaticPrefetchPlugin()
+  );
 }
 
 if (isProd) {

@@ -1,6 +1,6 @@
 # **WEBPACK MODERN BOILERPLATE**
 
-> This repository contains a simple but complete boilerplate, to easily and fastly start developing static pages from scratch with the help of Webpack 4 and React.
+> This repository contains a simple but complete boilerplate, with sass compiler and hot-reloading, to easily and fastly start developing projects from scratch with Webpack 4 and React 16.4.2
 
 Developed following the best practice for React and Style (with [OOCSS](http://oocss.org/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) and [BEM](http://getbem.com/) methodologies)
 
@@ -18,6 +18,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 
 #### **Features**
 
+- [x] React 16.4.2
 - [x] Webpack 4
 - [x] Es6 ready
 - [x] Sass compiler
@@ -132,10 +133,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [x] Airbnb eslinter
-- [x] React support
-- [x] ITCSS / OOCSS architecture guide
-- [x] Simple PWA environment
+- [ ] Jade template for html
+- [ ] Add routing (React router)
+- [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server
 - [ ] Define a custom styleguide
 

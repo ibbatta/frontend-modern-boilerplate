@@ -36,6 +36,15 @@ const webpackConfig = {
         ]
       },
       {
+        test: /\.(hbs|handlebars)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'handlebars-loader'
+          }
+        ]
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -82,7 +91,7 @@ const webpackConfig = {
   },
   resolve: {
     modules: ['./node_modules', './app'],
-    extensions: ['.js', '.jsx', '.json', '.scss', '.css']
+    extensions: ['.hbs', '.js', '.jsx', '.json', '.scss', '.css']
   },
   devServer: {
     port: process.env.PORT || 9000,
@@ -91,7 +100,7 @@ const webpackConfig = {
     compress: true,
     hot: true,
     inline: true,
-    open: false,
+    open: true,
     progress: true,
     overlay: !isProd,
     watchOptions: {
@@ -134,8 +143,13 @@ const webpackConfig = {
       filename: isProd ? '[name]-[contenthash].css' : '[name].bundle.css'
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'app/index.html'),
+      template: path.join(__dirname, 'app/index.hbs'),
       filename: 'index.html',
+      data: {
+        title: 'React Webpack Boilerplate',
+        isProd: isProd,
+        noscript: 'Your browser does not support JavaScript!'
+      },
       inject: true,
       minify: isProd,
       cache: isProd,

@@ -1,6 +1,6 @@
-# **WEBPACK MODERN BOILERPLATE**
+# **REACT + WEBPACK MODERN BOILERPLATE**
 
-> This repository contains a simple but complete boilerplate, to easily and fastly start developing static pages from scratch with the help of Webpack 4 and React.
+> This repository contains a simple but complete boilerplate, with sass compiler and hot-reloading, to easily and fastly start developing projects from scratch with React 16 and Webpack 4
 
 Developed following the best practice for React and Style (with [OOCSS](http://oocss.org/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) and [BEM](http://getbem.com/) methodologies)
 
@@ -13,21 +13,24 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 <img src="./repo_readme_assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 #### **Features**
 
+- [x] React 16.4.2
 - [x] Webpack 4
-- [x] Es6 ready
+- [x] Babel (ES6 and JSX support)
 - [x] Sass compiler
+- [x] Handlebar compiler
 - [x] Html, Js, Css minifier
 - [x] Develpment / Production environment ready
 - [x] Style linter
-- [x] Airbnb linter for javascript, react ready
+- [x] Airbnb javascript linter
 - [x] Style and script hot reloading in development mode
 - [x] Caching system for production environment
-- [x] Pwa integrated system by Google Workbox
+- [x] Pwa integrated system (Google Workbox)
 
 ---
 
@@ -68,6 +71,8 @@ yarn
 
 ##### run the project to develop
 
+Run the project locally using webpack-dev-server on port 9000 (as default)
+
 ```bash
 npm start:dev
 # or
@@ -81,6 +86,10 @@ npm start
 #or
 yarn start
 ```
+
+You can change the default port value setting `PORT` in the node env
+<br>
+ie. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
 
 ##### run the analyzer for webpack
 
@@ -132,10 +141,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [x] Airbnb eslinter
-- [x] React support
-- [x] ITCSS / OOCSS architecture guide
-- [x] Simple PWA environment
+- [ ] Add routing (React router)
+- [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server
 - [ ] Define a custom styleguide
 

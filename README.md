@@ -141,7 +141,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [ ] Add routing (React router)
+- [x] Add routing (React router)
 - [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server
 - [ ] Define a custom styleguide

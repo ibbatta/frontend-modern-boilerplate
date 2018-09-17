@@ -14,6 +14,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 <img src="./repo_readme_assets/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./repo_readme_assets/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 <img src="./repo_readme_assets/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 

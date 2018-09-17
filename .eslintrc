@@ -19,7 +19,6 @@
     "plugins": ["react"],
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "jest-enzyme"
+        "plugin:react/recommended"
     ]
 }

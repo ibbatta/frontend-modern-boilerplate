@@ -32,6 +32,8 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 - [x] Style and script hot reloading in development mode
 - [x] Caching system for production environment
 - [x] Pwa integrated system (Google Workbox)
+- [x] Routing environment with React-router
+- [x] Test environment with Enzime and Jest
 
 ---
 
@@ -142,8 +144,6 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [x] Add routing (React router)
-- [ ] Add test environment with Enzime and Jest
 - [ ] Node + Express server
 - [ ] Define a custom styleguide
 

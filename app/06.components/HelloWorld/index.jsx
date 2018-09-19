@@ -13,4 +13,8 @@ HelloWorld.propTypes = {
   message: PropTypes.string
 };
 
+HelloWorld.defaultProps = {
+  message: 'Hello World!'
+};
+
 export default HelloWorld;

@@ -33,7 +33,7 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 - [x] Caching system for production environment
 - [x] Pwa integrated system (Google Workbox)
 - [x] Routing environment with React-router
-- [x] Test environment with Enzime and Jest
+- [x] Test environment with Enzyme and Jest
 
 ---
 

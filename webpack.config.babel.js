@@ -1,4 +1,4 @@
-import path from 'path';
+import { resolve, join } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
@@ -9,14 +9,14 @@ import WorkboxPlugin from 'workbox-webpack-plugin';
 import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
-const distOutput = path.resolve(__dirname, 'dist');
+const distOutput = resolve(__dirname, 'dist');
 
 const webpackConfig = {
   target: 'web',
   devtool: isProd ? 'none' : 'eval',
   mode: isProd ? 'production' : 'development',
   entry: {
-    main: [path.resolve(__dirname, 'app/index.jsx' || 'app/index.js')]
+    main: [resolve(__dirname, 'app/index.jsx' || 'app/index.js')]
   },
   output: {
     path: distOutput,
@@ -91,12 +91,15 @@ const webpackConfig = {
   },
   resolve: {
     modules: ['./node_modules', './app'],
-    extensions: ['.hbs', '.js', '.jsx', '.json', '.scss', '.css']
+    extensions: ['.hbs', '.js', '.jsx', '.css', '.scss', '.json'],
+    alias: {
+      Components: resolve(__dirname, './app/06.components')
+    }
   },
   devServer: {
     port: process.env.PORT || 9000,
     host: process.env.HOST || 'localhost',
-    contentBase: path.resolve(__dirname, 'app'),
+    contentBase: resolve(__dirname, 'app'),
     compress: true,
     hot: true,
     inline: true,
@@ -143,7 +146,7 @@ const webpackConfig = {
       filename: isProd ? '[name]-[contenthash].css' : '[name].bundle.css'
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'app/index.hbs'),
+      template: join(__dirname, 'app/index.hbs'),
       filename: 'index.html',
       data: {
         title: 'React Webpack Boilerplate',
@@ -173,7 +176,7 @@ const webpackConfig = {
 
 if (!isProd) {
   webpackConfig.plugins.push(
-    new WatchIgnorePlugin([path.resolve(__dirname, 'node_modules')]),
+    new WatchIgnorePlugin([resolve(__dirname, 'node_modules')]),
     new HotModuleReplacementPlugin()
   );
 }

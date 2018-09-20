@@ -8,14 +8,15 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 
 ## **What this boilerplate contains**
 
-<img src="./repo_readme_assets/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./repo_readme_assets/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./__repo_readme_assets__/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
 #### **Features**
 
@@ -31,6 +32,8 @@ Developed following the best practice for React and Style (with [OOCSS](http://o
 - [x] Style and script hot reloading in development mode
 - [x] Caching system for production environment
 - [x] Pwa integrated system (Google Workbox)
+- [x] Routing environment with React-router
+- [x] Test environment with Enzyme and Jest
 
 ---
 
@@ -99,6 +102,16 @@ npm analyze
 yarn analyze
 ```
 
+##### run the tests
+
+```bash
+npm test
+#or
+yarn test
+```
+
+You can add the `--watch` flag if you want keep watching changes for test files
+
 ---
 
 ## **What is ITCSS?**
@@ -141,8 +154,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
-- [ ] Add routing (React router)
-- [ ] Add test environment with Enzime and Jest
+- [ ] Add coverage output for tests
+- [ ] Add snapshots for tests
+- [ ] Introduce Redux
 - [ ] Node + Express server
 - [ ] Define a custom styleguide
 

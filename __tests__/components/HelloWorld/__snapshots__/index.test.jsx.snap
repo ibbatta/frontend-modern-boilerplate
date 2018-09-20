@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelloWorld init component should match the snapshot 1`] = `
+<div
+  className="helloworld"
+>
+  <h1
+    className="helloworld__message"
+  >
+    Hello World!
+  </h1>
+</div>
+`;
+
+exports[`HelloWorld message props should render a specific message 1`] = `
+<HelloWorld
+  message="Hello Boilerplate!"
+>
+  <div
+    className="helloworld"
+  >
+    <h1
+      className="helloworld__message"
+    >
+      Hello Boilerplate!
+    </h1>
+  </div>
+</HelloWorld>
+`;
+
+exports[`HelloWorld message props should render default message 1`] = `
+<HelloWorld
+  message="Hello World!"
+>
+  <div
+    className="helloworld"
+  >
+    <h1
+      className="helloworld__message"
+    >
+      Hello World!
+    </h1>
+  </div>
+</HelloWorld>
+`;

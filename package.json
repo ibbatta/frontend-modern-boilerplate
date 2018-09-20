@@ -47,6 +47,7 @@
         "css-loader": "^1.0.0",
         "enzyme": "^3.6.0",
         "enzyme-adapter-react-16": "^1.5.0",
+        "enzyme-to-json": "^3.3.4",
         "eslint": "^4.19.1",
         "eslint-config-airbnb": "17.0.0",
         "eslint-plugin-import": "^2.12.0",
@@ -74,5 +75,28 @@
         "webpack-dev-server": "^3.1.5",
         "webpack-md5-hash": "^0.0.6",
         "workbox-webpack-plugin": "^3.4.1"
+    },
+    "jest": {
+        "bail": true,
+        "verbose": true,
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "__tests__/components/**/*.{test,spec}.{js,jsx}",
+            "app/**/*.{test,spec}.{js,jsx}",
+            "!<rootDir>/node_modules/",
+            "!<rootDir>/path/to/dir/"
+        ],
+        "coverageDirectory": "<rootDir>/__tests__/coverage",
+        "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.js",
+        "snapshotSerializers": ["enzyme-to-json/serializer"],
+        "moduleDirectories": [
+            "node_modules",
+            "app"
+        ],
+        "testPathIgnorePatterns": [
+            "<rootDir>/__tests__/setup/",
+            "<rootDir>/__tests__/coverage",
+            "<rootDir>/node_modules"
+        ]
     }
 }

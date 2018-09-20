@@ -154,6 +154,9 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
+- [ ] Add coverage output for tests
+- [ ] Add snapshots for tests
+- [ ] Introduce Redux
 - [ ] Node + Express server
 - [ ] Define a custom styleguide
 

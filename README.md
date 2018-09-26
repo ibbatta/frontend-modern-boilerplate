@@ -2,7 +2,10 @@
 
 > This repository contains a simple but complete boilerplate, with sass compiler and hot-reloading, to easily and fastly start developing projects from scratch with React 16 and Webpack 4
 
-Developed following the best practice for React and Style (with [OOCSS](http://oocss.org/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) and [BEM](http://getbem.com/) methodologies)
+This project was born mainly to satisfy my desire for knowledge. <br>
+Being a curious developer I have always wondered how the "engine" of boilerplate generators worked (especially the famous `create-react-app`) and I realized that the only way to really learn what's "under the hood" is to write a custom tool to retrace step by step all the main features (plus it was a great way to deepen updates released by Webpack 4).
+
+This project is developed following the best practice for React and style (using [OOCSS](http://oocss.org/), [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) and [BEM](http://getbem.com/) methodologies)
 
 ---
 
@@ -156,8 +159,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 - [x] Add coverage output for tests
 - [x] Add snapshots for tests
-- [ ] Introduce Redux
 - [ ] Node + Express server
+- [ ] Introduce Redux
 - [ ] Define a custom styleguide
 
 ---

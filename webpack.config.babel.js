@@ -93,7 +93,8 @@ const webpackConfig = {
     modules: ['./node_modules', './app'],
     extensions: ['.hbs', '.js', '.jsx', '.css', '.scss', '.json'],
     alias: {
-      Components: resolve(__dirname, './app/06.components')
+      Components: resolve(__dirname, './app/06.components'),
+      app: resolve(__dirname, './app')
     }
   },
   devServer: {

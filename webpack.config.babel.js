@@ -101,6 +101,7 @@ const webpackConfig = {
     port: process.env.PORT || 9000,
     host: process.env.HOST || 'localhost',
     contentBase: resolve(__dirname, 'app'),
+    historyApiFallback: true,
     compress: true,
     hot: true,
     inline: true,

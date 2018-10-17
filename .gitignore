@@ -9,6 +9,9 @@ yarn-error.log*
 # Optional npm cache directory
 .npm
 
+# package-lock should be ignored because users should use Yarn
+package-lock.json
+
 # Dependency directories
 **/node_modules
 **/jspm_packages

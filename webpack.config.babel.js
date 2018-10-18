@@ -16,7 +16,7 @@ const webpackConfig = {
   devtool: isProd ? 'none' : 'eval',
   mode: isProd ? 'production' : 'development',
   entry: {
-    main: [resolve(__dirname, 'app/index.jsx' || 'app/index.js')]
+    main: [resolve(__dirname, 'app/index.jsx')]
   },
   output: {
     path: distOutput,
@@ -99,15 +99,17 @@ const webpackConfig = {
   },
   devServer: {
     port: process.env.PORT || 9000,
-    host: process.env.HOST || 'localhost',
+    host: process.env.HOST || '127.0.0.1',
     contentBase: resolve(__dirname, 'app'),
     historyApiFallback: true,
     compress: true,
     hot: true,
     inline: true,
-    open: true,
+    open: !isProd,
     progress: true,
     overlay: !isProd,
+    noInfo: isProd,
+    quiet: isProd,
     watchOptions: {
       ignored: /node_modules/,
       aggregateTimeout: 500,
@@ -118,6 +120,7 @@ const webpackConfig = {
     hints: isProd ? 'error' : 'warning'
   },
   optimization: {
+    namedChunks: true,
     minimize: isProd,
     minimizer: [new UglifyJsPlugin()],
     nodeEnv: isProd ? 'production' : 'development',
@@ -131,7 +134,9 @@ const webpackConfig = {
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
+          minChunks: 15,
+          priority: -10,
+          chunks: 'all'
         },
         default: {
           minChunks: 2,
@@ -140,6 +145,10 @@ const webpackConfig = {
         }
       }
     }
+  },
+  stats: {
+    colors: true,
+    env: true
   },
   plugins: [
     new WebpackMd5Hash(),
@@ -194,8 +203,6 @@ if (isProd) {
     new WorkboxPlugin.GenerateSW({
       cacheId: 'boilerplate-app',
       swDest: 'service-worker.js',
-      globPatterns: ['**/*.{html,js,css,jpg,jpeg,svg,png,ico,woff,woff2,ttf}'],
-      dontCacheBustUrlsMatching: /\.\w{8}\./,
       clientsClaim: true,
       skipWaiting: true,
       runtimeCaching: [

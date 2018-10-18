@@ -24,8 +24,8 @@
         "not ie <= 10"
     ],
     "scripts": {
-        "start": "NODE_ENV=production webpack",
-        "start:dev": "NODE_ENV=development webpack-dev-server",
+        "start": "NODE_ENV=production webpack -p",
+        "start:dev": "NODE_ENV=development webpack-dev-server -d --progress --profile",
         "analyze": "webpack-dashboard -- webpack-dev-server",
         "test": "jest"
     },

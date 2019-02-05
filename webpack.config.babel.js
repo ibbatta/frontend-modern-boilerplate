@@ -10,6 +10,19 @@ import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
 const distOutput = resolve(__dirname, 'dist');
+const logStats = {
+  context: resolve(__dirname, 'app'),
+  colors: true,
+  env: true,
+  all: false,
+  assets: true,
+  modules: true,
+  maxModules: isProd ? 5 : 0,
+  errors: true,
+  errorDetails: true,
+  warnings: true,
+  moduleTrace: true
+};
 
 const webpackConfig = {
   target: 'web',
@@ -105,17 +118,18 @@ const webpackConfig = {
     compress: true,
     hot: true,
     inline: true,
-    open: !isProd,
-    progress: true,
+    open: false, //!isProd,
     overlay: !isProd,
     noInfo: isProd,
     quiet: isProd,
+    stats: logStats,
     watchOptions: {
       ignored: /node_modules/,
       aggregateTimeout: 500,
       poll: true
     }
   },
+  stats: logStats,
   performance: {
     hints: isProd ? 'error' : 'warning'
   },
@@ -145,10 +159,6 @@ const webpackConfig = {
         }
       }
     }
-  },
-  stats: {
-    colors: true,
-    env: true
   },
   plugins: [
     new WebpackMd5Hash(),

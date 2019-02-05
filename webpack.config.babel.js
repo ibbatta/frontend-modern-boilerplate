@@ -118,7 +118,7 @@ const webpackConfig = {
     compress: true,
     hot: true,
     inline: true,
-    open: false, //!isProd,
+    open: !isProd,
     overlay: !isProd,
     noInfo: isProd,
     quiet: isProd,
@@ -134,6 +134,7 @@ const webpackConfig = {
     hints: isProd ? 'error' : 'warning'
   },
   optimization: {
+    runtimeChunk: 'single',
     namedChunks: true,
     minimize: isProd,
     minimizer: [new UglifyJsPlugin()],
@@ -142,20 +143,15 @@ const webpackConfig = {
     namedModules: !isProd,
     splitChunks: {
       chunks: 'all',
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
+      maxAsyncRequests: Infinity,
+      maxInitialRequests: Infinity,
+      minSize: 0,
       name: true,
       cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          minChunks: 15,
-          priority: -10,
+        vendor: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          name: 'react',
           chunks: 'all'
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
         }
       }
     }

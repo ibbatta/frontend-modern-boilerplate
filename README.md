@@ -44,9 +44,10 @@ This project is developed following the best practice for React and style (using
 
 Before cloning the repo **be sure** you have installed:
 
-- [Node](http://nodejs.org/download/) (version >= 9.10.x), if you have NVM run `nvm install` to have the right node version for the project
+- [Node](http://nodejs.org/download/) (version >= 9.10.x), please install NVM and run `nvm use` to have the right node version for the project
 - [Yarn](https://yarnpkg.com/en/docs/install) (version >= 1.9.x)
 - [Npm](https://www.npmjs.com/) (version >= 6.2.x)
+- [Nvm](https://github.com/creationix/nvm) (version >= 0.33.x)
 
 Then:
 

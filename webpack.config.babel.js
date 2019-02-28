@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WorkboxPlugin from 'workbox-webpack-plugin';
 import { HotModuleReplacementPlugin, WatchIgnorePlugin } from 'webpack';
@@ -137,7 +137,19 @@ const webpackConfig = {
     runtimeChunk: 'single',
     namedChunks: true,
     minimize: isProd,
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        cache: true,
+        test: /\.js(\?.*)?$/i,
+        terserOptions: {
+          mangle: true,
+          output: {
+            comments: false
+          }
+        }
+      })
+    ],
     nodeEnv: isProd ? 'production' : 'development',
     noEmitOnErrors: false,
     namedModules: !isProd,
@@ -174,14 +186,6 @@ const webpackConfig = {
       minify: isProd,
       cache: isProd,
       hash: isProd
-    }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_console: isProd,
-          warnings: !isProd
-        }
-      }
     })
   ],
   node: {

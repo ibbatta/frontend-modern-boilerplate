@@ -164,8 +164,8 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 - - [ ] Add issue templates
 - - [ ] Add pull request template
 
-- [ ] Update React version
-- [ ] Migrate to Terser for js minification (remove Babel)
+- [x] Update React version
+- [ ] Migrate to Terser for js minification
 - [ ] Node + Express server
 - [ ] Introduce Redux
 - [ ] Define a custom styleguide

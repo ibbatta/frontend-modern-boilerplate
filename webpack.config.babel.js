@@ -214,17 +214,17 @@ if (isProd) {
       runtimeCaching: [
         {
           urlPattern: /\.(?:png|jpg|jpeg|svg|gif|tiff|ico|json|woff|woff2|ttf)$/,
-          handler: 'cacheFirst',
+          handler: 'CacheFirst',
           options: { cacheName: 'static-assets' }
         },
         {
           urlPattern: new RegExp('^https://fonts.googleapis.com/'),
-          handler: 'networkFirst',
+          handler: 'NetworkFirst',
           options: { cacheName: 'google-font' }
         },
         {
           urlPattern: new RegExp('/'),
-          handler: 'staleWhileRevalidate',
+          handler: 'StaleWhileRevalidate',
           options: { cacheName: 'general' }
         }
       ]

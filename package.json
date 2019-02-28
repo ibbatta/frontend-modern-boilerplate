@@ -96,7 +96,7 @@
             "!<rootDir>/path/to/dir/"
         ],
         "coverageDirectory": "<rootDir>/__tests__/coverage",
-        "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup/setupEnzyme.js",
+        "setupFilesAfterEnv": ["<rootDir>/__tests__/setup/setupEnzyme.js"],
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
         ],

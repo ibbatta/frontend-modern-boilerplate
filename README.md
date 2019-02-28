@@ -76,7 +76,7 @@ yarn
 
 ## **Run the project**
 
-##### run the project to develop
+##### Run the project to develop:
 
 Run the project locally using webpack-dev-server on port 9000 (as default)
 
@@ -86,7 +86,7 @@ npm start:dev
 yarn start:dev
 ```
 
-##### run the project to production
+##### Run the project to production:
 
 ```bash
 npm start
@@ -98,7 +98,7 @@ You can change the default port value setting `PORT` in the node env
 <br>
 ie. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
 
-##### run the analyzer for webpack
+##### Run the analyzer for webpack:
 
 ```bash
 npm analyze
@@ -106,7 +106,7 @@ npm analyze
 yarn analyze
 ```
 
-##### run the tests
+##### Run the tests:
 
 ```bash
 npm test
@@ -114,7 +114,7 @@ npm test
 yarn test
 ```
 
-You can add the `--watch` flag if you want keep watching changes for test files
+You can add the `--watch` flag if you want keep watching changes for test files.
 
 ---
 
@@ -130,11 +130,11 @@ One of the key principles of ITCSS is that it separates your CSS codebase to sev
 - **Tools**: globally used mixins and functions. It’s important not to output any CSS in the first 2 layers.
 - **Generic**: reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS.
 - **Elements**: styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
-- **Objects**: class-based selectors which define undecorated design patterns, for example media object known from OOCSS
-- **Components**: specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components
-- **Utilities**: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+- **Objects**: class-based selectors which define undecorated design patterns, for example media object known from OOCSS.
+- **Components**: specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components.
+- **Utilities**: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class.
 
-You will find a more complete explanation inside each ITCSS layer in `./app` folder
+You will find a more complete explanation inside each ITCSS layer in `./app` folder.
 
 ---
 

@@ -2,7 +2,7 @@ import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HelloWorld from './06.components/HelloWorld';
+import HelloWorld from 'Components/HelloWorld';
 
 const Index = () => {
   return (

@@ -158,6 +158,12 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Todo**
 
+- [ ] Add GitHub recommended community standards
+- - [ ] Add code of conduct
+- - [ ] Add contributing
+- - [ ] Add issue templates
+- - [ ] Add pull request template
+
 - [ ] Update React version
 - [ ] Migrate to Terser for js minification (remove Babel)
 - [ ] Node + Express server

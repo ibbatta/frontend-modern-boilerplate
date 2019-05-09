@@ -178,7 +178,7 @@ To check on Javascript / React [.js / .jsx] syntax I use [Eslint](http://eslint.
 
 ## **Credits**
 
-- [Lubos Kmetko](https://www.xfive.co/blog/author/lubos/) (for the great ITCSS guide)
+- [Lubos Kmetko](https://www.xfive.co/blog/author/lubos/) (kudos for the great ITCSS guide)
 
 ---
 

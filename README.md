@@ -11,17 +11,17 @@ This project is developed following the best practice for React and style (using
 
 ## **What this boilerplate contains**
 
-<img src="./__repo_readme_assets__/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
-<img src="./__repo_readme_assets__/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-npm.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-yarn.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-es6.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-sass.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-webpack.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-react.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-jest.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-workbox.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
+<img src="./.readme-assets/logo-handlebar.png" height="55" alt="logo placeholder">&nbsp;&nbsp;
 
-#### **Features**
+### **Features**
 
 - [x] React 16.4.2
 - [x] Webpack 4
@@ -76,7 +76,7 @@ yarn
 
 ## **Run the project**
 
-##### Run the project to develop:
+### Run the project to develop:
 
 Run the project locally using webpack-dev-server on port 9000 (as default)
 
@@ -86,7 +86,7 @@ npm start:dev
 yarn start:dev
 ```
 
-##### Run the project to production:
+### Run the project to production:
 
 ```bash
 npm start
@@ -94,11 +94,10 @@ npm start
 yarn start
 ```
 
-You can change the default port value setting `PORT` in the node env
-<br>
+You can change the default port value setting `PORT` in the node env\
 ie. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
 
-##### Run the analyzer for webpack:
+### Run the analyzer for webpack:
 
 ```bash
 npm analyze
@@ -106,7 +105,7 @@ npm analyze
 yarn analyze
 ```
 
-##### Run the tests:
+### Run the tests:
 
 ```bash
 npm test
@@ -142,7 +141,7 @@ You will find a more complete explanation inside each ITCSS layer in `./app` fol
 
 To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
 
-#### Basic Editor Configuration
+### Basic Editor Configuration
 
 I chose to use [EditorConfig](http://editorconfig.org/) to share the basic configuration like indentation and charset. It works including an `.editorconfig` file in the root directory and making sure your editor has the necessary plugin. You can find a list of downloads [here](http://editorconfig.org/#download). The choice to keep the indentation with 2 spaces is to be compliant with actual standards (major frameworks use this configuration both for JS and CSS).
 

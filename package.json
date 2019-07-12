@@ -90,14 +90,13 @@
         "verbose": true,
         "collectCoverage": true,
         "collectCoverageFrom": [
-            "__tests__/components/**/*.{test,spec}.{js,jsx}",
             "app/**/*.{test,spec}.{js,jsx}",
             "!<rootDir>/node_modules/",
             "!<rootDir>/path/to/dir/"
         ],
-        "coverageDirectory": "<rootDir>/__tests__/coverage",
+        "coverageDirectory": "<rootDir>/tests/coverage",
         "setupFilesAfterEnv": [
-            "<rootDir>/__tests__/setup/setupEnzyme.js"
+            "<rootDir>/tests/setup/setupEnzyme.js"
         ],
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
@@ -107,8 +106,8 @@
             "app"
         ],
         "testPathIgnorePatterns": [
-            "<rootDir>/__tests__/setup/",
-            "<rootDir>/__tests__/coverage",
+            "<rootDir>/tests/setup/",
+            "<rootDir>/tests/coverage",
             "<rootDir>/node_modules"
         ]
     }

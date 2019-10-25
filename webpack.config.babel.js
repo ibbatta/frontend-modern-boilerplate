@@ -136,6 +136,7 @@ const webpackConfig = {
   optimization: {
     runtimeChunk: 'single',
     namedChunks: true,
+    usedExports: true,
     minimize: isProd,
     minimizer: [
       new TerserPlugin({

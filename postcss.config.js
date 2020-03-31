@@ -3,6 +3,7 @@ module.exports = {
     'postcss-import': {},
     'postcss-preset-env': {},
     'postcss-url': {},
-    'postcss-clean': {}
+    'postcss-clean': {},
+    'autoprefixer': {}
   }
 };

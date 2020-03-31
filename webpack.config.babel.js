@@ -135,7 +135,10 @@ const webpackConfig = {
     moduleIds: 'hashed',
     runtimeChunk: 'single',
     namedChunks: true,
-    minimize: !isProd,
+    usedExports: true,
+    minimize: isProd,
+    usedExports: true,
+    minimize: isProd,
     minimizer: [
       new TerserPlugin({
         parallel: true,

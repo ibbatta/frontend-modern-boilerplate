@@ -29,7 +29,7 @@ This project is developed following the best practice for React and style (using
 - [x] Sass compiler
 - [x] Handlebar compiler
 - [x] Html, Js, Css minifier
-- [x] Develpment / Production environment ready
+- [x] Development / Production environment ready
 - [x] Style linter
 - [x] Airbnb javascript linter
 - [x] Style and script hot reloading in development mode
@@ -95,7 +95,7 @@ yarn start
 ```
 
 You can change the default port value setting `PORT` in the node env\
-ie. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
+i.e. `PORT=8080 npm start:dev` or `PORT=8080 yarn start:dev`
 
 ### Run the analyzer for webpack:
 
@@ -131,7 +131,7 @@ One of the key principles of ITCSS is that it separates your CSS codebase to sev
 - **Elements**: styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
 - **Objects**: class-based selectors which define undecorated design patterns, for example media object known from OOCSS.
 - **Components**: specific UI components. This is where majority of our work takes place and our UI components are often composed of Objects and Components.
-- **Utilities**: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class.
+- **Utilities**: utilities and helper classes with ability to override anything which goes before in the triangle, e.g. hide helper class.
 
 You will find a more complete explanation inside each ITCSS layer in `./app` folder.
 
@@ -139,7 +139,7 @@ You will find a more complete explanation inside each ITCSS layer in `./app` fol
 
 ## **Editor setup**
 
-To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editors plugins. Plese be sure to disable / remove any other js/jsx linters or custom configurations.
+To keep consistency to the style of resources, I decided to stick to some shared rules that have to be applied to every project using some editors plugins. Please be sure to disable / remove any other js/jsx linters or custom configurations.
 
 ### Basic Editor Configuration
 

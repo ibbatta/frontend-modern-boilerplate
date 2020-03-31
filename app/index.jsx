@@ -1,8 +1,9 @@
 import './index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import loadable from '@loadable/component';
 
-import HelloWorld from 'Components/HelloWorld';
+const HelloWorld = loadable(() => import('Components/HelloWorld'));
 
 const Index = () => {
   return (

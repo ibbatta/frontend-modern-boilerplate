@@ -1,19 +1,19 @@
 html,
 body {
-    width: 100%;
-    height: 100vh;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body {
-    box-sizing: border-box;
-    font-family: $font-family-default;
+  box-sizing: border-box;
+  font-family: $font-family-default;
 }
 
 img {
-    width: 100%;
-    max-width: 160px;
-    max-height: 160px;
+  width: 100%;
+  max-width: 160px;
+  max-height: 160px;
 }

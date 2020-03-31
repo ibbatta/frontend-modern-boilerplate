@@ -28,9 +28,7 @@ const webpackConfig = {
   target: 'web',
   devtool: isProd ? 'none' : 'eval',
   mode: isProd ? 'production' : 'development',
-  entry: {
-    main: [resolve(__dirname, 'app/index.jsx')]
-  },
+  entry: [resolve(__dirname, 'app/index.jsx')],
   output: {
     path: distOutput,
     filename: isProd ? '[name]-[chunkhash].js' : '[name].bundle.js',
@@ -134,9 +132,10 @@ const webpackConfig = {
     hints: isProd ? 'error' : 'warning'
   },
   optimization: {
+    moduleIds: 'hashed',
     runtimeChunk: 'single',
     namedChunks: true,
-    minimize: isProd,
+    minimize: !isProd,
     minimizer: [
       new TerserPlugin({
         parallel: true,
@@ -152,7 +151,7 @@ const webpackConfig = {
     ],
     nodeEnv: isProd ? 'production' : 'development',
     noEmitOnErrors: false,
-    namedModules: !isProd,
+    namedModules: isProd,
     splitChunks: {
       chunks: 'all',
       maxAsyncRequests: Infinity,
@@ -222,9 +221,14 @@ if (isProd) {
           options: { cacheName: 'static-assets' }
         },
         {
-          urlPattern: new RegExp('^https://fonts.googleapis.com/'),
-          handler: 'NetworkFirst',
-          options: { cacheName: 'google-font' }
+          urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+          handler: 'StaleWhileRevalidate',
+          options: { cacheName: 'google-fonts-stylesheets' }
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+          handler: 'cacheFirst',
+          options: { cacheName: 'google-fonts-webfont' }
         },
         {
           urlPattern: new RegExp('/'),
